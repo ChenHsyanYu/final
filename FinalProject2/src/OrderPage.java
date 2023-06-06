@@ -65,7 +65,7 @@ public class OrderPage extends JFrame {
 		setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 838, 737);
+		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -91,7 +91,7 @@ public class OrderPage extends JFrame {
 		menuPanel.setPreferredSize(new Dimension(200, 300)); 
 		
 		JLabel menuLabel = new JLabel(String.format("%s\n%s\n%s\n%s","今","日","菜","單"));
-		menuLabel.setForeground(new Color(237, 175, 12));
+		menuLabel.setForeground(new Color(255, 154, 53));
 		menuLabel.setFont(new Font("微軟正黑體", Font.BOLD, 35));
 		menuLabel.setBackground(new Color(255, 255, 255));
 		menuLabel.setHorizontalAlignment(SwingConstants.CENTER);

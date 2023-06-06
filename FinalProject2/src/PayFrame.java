@@ -13,6 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class PayFrame extends JFrame {
 	private JLabel sause, takeOut, order, payment, payMentShow; 
@@ -30,9 +33,10 @@ public class PayFrame extends JFrame {
 	
 	
 	public PayFrame(Order order,OrderStore store,Menu menu) {
+		setBackground(new Color(255, 255, 255));
 		this.menu = menu;
 		this.setTitle("備註和付款");
-		this.setSize(800,400);
+		this.setSize(800,600);
 		orderResult = order;
 		this.store = store;
 		
@@ -46,20 +50,40 @@ public class PayFrame extends JFrame {
 	
 	public void createLabel() {
 		sause = new JLabel("選擇配料");
+		sause.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		sause.setBackground(new Color(255, 255, 255));
 		takeOut = new JLabel("內用還是外帶？");
+		takeOut.setFont(new Font("微軟正黑體",Font.PLAIN,18));
 		order = new JLabel("您的訂單內容：");
+		order.setFont(new Font("微軟正黑體",Font.PLAIN,18));
 		orderShow = new JTextArea(" ");
 		payment = new JLabel("金額：");
+		payment.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 		payMentShow = new JLabel(" ");
 	}
 	
 	public void createCheckBox() {
 		box = new Box(BoxLayout.X_AXIS);
 		蔥Button = new JCheckBox("蔥");
+		蔥Button.setBackground(new Color(255, 255, 255));
+		蔥Button.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		蔥Button.setHorizontalAlignment(SwingConstants.CENTER);
 		薑Button = new JCheckBox("薑");
+		薑Button.setBackground(new Color(255, 255, 255));
+		薑Button.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		薑Button.setHorizontalAlignment(SwingConstants.CENTER);
 		蒜Button = new JCheckBox("蒜");
+		蒜Button.setBackground(new Color(255, 255, 255));
+		蒜Button.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		蒜Button.setHorizontalAlignment(SwingConstants.CENTER);
 		香油Button = new JCheckBox("香油");
+		香油Button.setBackground(new Color(255, 255, 255));
+		香油Button.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		香油Button.setHorizontalAlignment(SwingConstants.CENTER);
 		辣椒Button = new JCheckBox("辣椒");
+		辣椒Button.setBackground(new Color(255, 255, 255));
+		辣椒Button.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		辣椒Button.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		box.add(蔥Button);
 		box.add(薑Button);
@@ -70,7 +94,11 @@ public class PayFrame extends JFrame {
 	
 	public void createRadioButton() {
 		takeOutButton = new JRadioButton("外帶");	
+		takeOutButton.setBackground(new Color(255, 255, 255));
+		takeOutButton.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 		hereButton = new JRadioButton("內用");
+		hereButton.setBackground(new Color(255, 255, 255));
+		hereButton.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 		group = new ButtonGroup();
 		group.add(takeOutButton);
 		group.add(hereButton);
@@ -79,7 +107,11 @@ public class PayFrame extends JFrame {
 	
 	public void createButton() {
 		finishButton = new JButton("確認");
+		finishButton.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
+		finishButton.setBackground(new Color(255, 255, 255));
 		fiAllButton = new JButton("完成");
+		fiAllButton.setBackground(new Color(255, 255, 255));
+		fiAllButton.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 		
 		finishButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
@@ -134,6 +166,7 @@ public class PayFrame extends JFrame {
 				pay = (int)orderResult.calTotal();
 				//取得訂單金額
 				//code
+				payMentShow.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
 				payMentShow.setText(pay + "");
 			}
 		});
@@ -150,15 +183,18 @@ public class PayFrame extends JFrame {
 	
 	public void createLayout() {
 		panel1 = new JPanel();
+		panel1.setBackground(new Color(255, 255, 255));
 		panel1.add(payment);
 		panel1.add(payMentShow);
 		panel1.add(fiAllButton);
 		
 		panel2 = new JPanel();
+		panel2.setBackground(new Color(255, 255, 255));
 		panel2.add(takeOutButton);
 		panel2.add(hereButton);
 		
 		allPanel = new JPanel(new GridLayout(8, 1));
+		allPanel.setBackground(new Color(255, 255, 255));
 		allPanel.add(sause);
 		allPanel.add(box);
 		allPanel.add(takeOut);

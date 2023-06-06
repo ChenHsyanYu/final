@@ -23,7 +23,9 @@ import java.sql.Statement;
 	  setTitle("送青菜");
    
 	  cabbage = new JRadioButton("高麗菜");
+	  cabbage.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
 	  spinach = new JRadioButton("青江菜");
+	  spinach.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
    
 	  ButtonGroup vegetable = new ButtonGroup();
    
@@ -39,6 +41,7 @@ import java.sql.Statement;
 	  panel = new JPanel();
 	  panel.setLayout(new BorderLayout());
 	  panel.add(vegetablePanel, BorderLayout.CENTER);
+	  panel.setBackground(new Color(255, 255, 255));
 	  setContentPane(panel);
 //      setLayout(new BorderLayout());
 //      add(vegetablePanel, BorderLayout.CENTER);
@@ -47,7 +50,9 @@ import java.sql.Statement;
   }
    
    public void createButton() {
-      confirm = new JButton("confirm");
+      confirm = new JButton("確認");
+      confirm.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+      confirm.setBackground(new Color(255, 255, 255));
       confirm.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e) {
     	 

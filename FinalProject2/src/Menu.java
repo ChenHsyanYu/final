@@ -7,6 +7,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Menu {
 	private JFrame frame;
@@ -32,12 +34,15 @@ public class Menu {
 	
 	public void perpareGUI() {
 		frame = new JFrame("點餐系統");
+		frame.setBackground(new Color(255, 255, 255));
 		frame.setSize(800,600);
 		panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
 		label = new JLabel("點選左上方進入點餐系統");
+		label.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
 		
 		panel.add(label);
-		frame.add(panel);
+		frame.getContentPane().add(panel);
 		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
@@ -46,6 +51,7 @@ public class Menu {
 	
 	public void showMenu() {
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
 		JMenu bossMenu = new JMenu("boss");
 		JMenu userMenu = new JMenu("user");
 		
@@ -70,13 +76,6 @@ public class Menu {
 			}
 		});
 		
-//		userOrder.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				orderPage = new OrderPage(menu,store);
-//				JPanel panel = orderPage.getContentPane();
-//				changePanel(panel);
-//			}
-//		});
 		
 		
 		bossMenu.add(bossLogin);
